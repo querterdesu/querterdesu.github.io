@@ -6,8 +6,8 @@ import {
 	a as n,
 	t as s,
 	T as a,
-	F as i,
-	r as l,
+	F as l,
+	r as i,
 	b as c,
 	e as d,
 	f as g,
@@ -24,21 +24,21 @@ import {
 			new Promise((o, s) => {
 				const a = new URL(e, r);
 				if (self[t].moduleMap[a]) return o(self[t].moduleMap[a]);
-				const i = new Blob(
+				const l = new Blob(
 						[`import * as m from '${a}';`, `${t}.moduleMap['${a}']=m;`],
 						{ type: 'text/javascript' }
 					),
-					l = Object.assign(document.createElement('script'), {
+					i = Object.assign(document.createElement('script'), {
 						type: 'module',
-						src: URL.createObjectURL(i),
+						src: URL.createObjectURL(l),
 						onerror() {
-							s(new Error(`Failed to import: ${e}`)), n(l);
+							s(new Error(`Failed to import: ${e}`)), n(i);
 						},
 						onload() {
-							o(self[t].moduleMap[a]), n(l);
+							o(self[t].moduleMap[a]), n(i);
 						},
 					});
-				document.head.appendChild(l);
+				document.head.appendChild(i);
 			})),
 			(self[t].moduleMap = {});
 	}
@@ -48,7 +48,7 @@ var m = e({
 	props: { properties: { type: Object, required: !0 } },
 	data: () => ({ hover: !1 }),
 });
-m.render = function (e, i, l, c, d, g) {
+m.render = function (e, l, i, c, d, g) {
 	return (
 		o(),
 		t(
@@ -61,8 +61,8 @@ m.render = function (e, i, l, c, d, g) {
 						{
 							class:
 								'flex flex-row py-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-xl mx-1 px-2 cursor-pointer dark:text-gray-200 transform transition',
-							onMouseover: i[1] || (i[1] = (t) => (e.hover = !0)),
-							onMouseleave: i[2] || (i[2] = (t) => (e.hover = !1)),
+							onMouseover: l[1] || (l[1] = (t) => (e.hover = !0)),
+							onMouseleave: l[2] || (l[2] = (t) => (e.hover = !1)),
 						},
 						[
 							n(
@@ -113,22 +113,22 @@ var u = e({
 		},
 	},
 });
-const p = {
+const w = {
 		class:
 			'flex flex-col font-bold bg-white rounded-xl p-4 pr-6 text-xl dark:bg-gray-800 shadow-2xl',
 	},
-	w = { class: 'mx-3 text-2xl select-none dark:text-gray-200' };
+	h = { class: 'mx-3 text-2xl select-none dark:text-gray-200' };
 u.render = function (e, r, a, d, g, m) {
 	const u = c('DropdownItem');
 	return (
 		o(),
-		t('div', p, [
-			n('p', w, s(e.title), 1),
+		t('div', w, [
+			n('p', h, s(e.title), 1),
 			(o(!0),
 			t(
-				i,
+				l,
 				null,
-				l(
+				i(
 					e.items,
 					(r) => (
 						o(),
@@ -152,7 +152,7 @@ u.render = function (e, r, a, d, g, m) {
 		])
 	);
 };
-var h = e({
+var p = e({
 	name: 'DropdownMenu',
 	data: () => ({ toggled: !1, currentList: '', hover: !1 }),
 	props: {
@@ -177,7 +177,7 @@ var h = e({
 	},
 	components: { DropdownList: u },
 });
-const A = n(
+const x = n(
 		'path',
 		{
 			d:
@@ -186,12 +186,12 @@ const A = n(
 		null,
 		-1
 	),
-	x = {
+	A = {
 		key: 0,
 		class: 'absolute mt-16 w-9/12 md:w-6/12 lg:w-3/12 xl:w-2/12 z-20',
 	};
-h.render = function (e, s, g, m, u, p) {
-	const w = c('DropdownList');
+p.render = function (e, s, g, m, u, w) {
+	const h = c('DropdownList');
 	return (
 		o(),
 		t(
@@ -218,7 +218,7 @@ h.render = function (e, s, g, m, u, p) {
 						],
 						viewBox: '0 0 20 20',
 					},
-					[A],
+					[x],
 					2
 				)),
 				n(
@@ -228,12 +228,12 @@ h.render = function (e, s, g, m, u, p) {
 						default: r(() => [
 							e.toggled
 								? (o(),
-								  t('div', x, [
+								  t('div', A, [
 										(o(!0),
 										t(
-											i,
+											l,
 											null,
-											l(
+											i(
 												e.lists,
 												(r, n) => (
 													o(),
@@ -241,7 +241,7 @@ h.render = function (e, s, g, m, u, p) {
 														e.currentDropdown == n && e.hover
 															? (o(),
 															  t(
-																	w,
+																	h,
 																	{
 																		key: 0,
 																		onToggleMenu: e.toggleMenu,
@@ -282,7 +282,7 @@ h.render = function (e, s, g, m, u, p) {
 };
 var y = e({
 	name: 'App',
-	components: { DropdownMenu: h },
+	components: { DropdownMenu: p },
 	data: () => ({
 		currentSection: 'home',
 		darkMode: !1,
@@ -349,8 +349,30 @@ var y = e({
 const b = {
 		class: 'bg-gray-100 dark:bg-gray-900 min-h-screen transition duration-100',
 	},
-	f = { class: 'flex justify-center' },
-	v = n(
+	k = n(
+		'svg',
+		{
+			class: 'img-white fill-current',
+			viewBox: '0 0 256 256',
+			width: '23',
+			height: '23',
+		},
+		[
+			n('g', null, [
+				n('g', null, [
+					n('polygon', {
+						xmlns: 'http://www.w3.org/2000/svg',
+						points:
+							'207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128   ',
+					}),
+				]),
+			]),
+		],
+		-1
+	),
+	f = n('p', { class: 'ml-2 text-xl' }, 'Back', -1),
+	v = { class: 'flex justify-center' },
+	C = n(
 		'h1',
 		{
 			class:
@@ -359,38 +381,38 @@ const b = {
 		' Querter ',
 		-1
 	),
-	k = { class: 'flex' },
-	C = { key: 0, class: 'flex flex-col justify-center items-center' },
-	E = {
+	E = { class: 'flex' },
+	M = { key: 0, class: 'flex flex-col justify-center items-center' },
+	D = {
 		class:
 			'mx-20 flex flex-col lg:flex-row justify-center items-center w-2/3 rounded-2xl bg-white dark:bg-gray-800 shadow-lg my-10',
 	},
-	M = { class: 'mx-8 text-black dark:text-white' },
-	D = { class: 'lg:text-2xl xl:text-5xl font-bold text-center lg:text-left' },
-	I = {
+	I = { class: 'mx-8 text-black dark:text-white' },
+	j = { class: 'lg:text-2xl xl:text-5xl font-bold text-center lg:text-left' },
+	L = {
 		class:
 			'lg:my-4 xl:my-6 2xl:my-8 lg:text-md xl:text-lg text-center lg:text-left mb-4',
 	},
-	j = {
+	B = {
 		class: 'text-center lg:text-left flex justify-center lg:justify-start mb-6',
 	},
-	L = { key: 1 },
-	B = n(
+	F = { key: 1 },
+	S = n(
 		'div',
 		{ class: 'text-3xl text-center' },
 		' Soon there will be projects added! ',
 		-1
 	),
-	F = { key: 2 },
-	S = n(
+	J = { key: 2 },
+	q = n(
 		'div',
 		{ class: 'text-3xl text-center' },
 		' Soon there will be hobbies added! ',
 		-1
 	),
-	J = { key: 3, class: 'flex flex-row justify-center my-20 flex-wrap' };
+	R = { key: 3, class: 'flex flex-row justify-center my-20 flex-wrap' };
 y.render = function (e, r, a, g, m, u) {
-	const p = c('DropdownMenu');
+	const w = c('DropdownMenu');
 	return (
 		o(),
 		t(
@@ -398,22 +420,34 @@ y.render = function (e, r, a, g, m, u) {
 			{ class: e.darkMode ? 'dark' : '' },
 			[
 				n('div', b, [
-					n('div', f, [
-						v,
+					n(
+						'a',
+						{
+							class:
+								'absolute my-4 mx-4 bg-white dark:bg-gray-800 dark:text-white text-black shadow-lg rounded-full p-4 flex items-center',
+							href: '/',
+							onMouseenter: r[1] || (r[1] = (t) => (e.backToggle = !0)),
+							onMouseleave: r[2] || (r[2] = (t) => (e.backToggle = !1)),
+						},
+						[k, f],
+						32
+					),
+					n('div', v, [
+						C,
 						n(
 							'button',
 							{
 								class:
 									'text-3xl w-16 h-16 ml-auto my-4 mx-4 bg-white dark:bg-gray-800 focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-600 rounded-xl shadow-lg',
-								onClick: r[1] || (r[1] = (t) => (e.darkMode = !e.darkMode)),
+								onClick: r[3] || (r[3] = (t) => (e.darkMode = !e.darkMode)),
 							},
 							s(e.darkMode ? '🌑' : '☀️'),
 							1
 						),
 					]),
-					n('div', k, [
+					n('div', E, [
 						n(
-							p,
+							w,
 							{
 								lists: e.sections,
 								start: 'sections',
@@ -426,16 +460,16 @@ y.render = function (e, r, a, g, m, u) {
 					]),
 					'home' == e.currentSection
 						? (o(),
-						  t('div', C, [
+						  t('div', M, [
 								(o(!0),
 								t(
-									i,
+									l,
 									null,
-									l(
+									i(
 										e.port,
 										(e) => (
 											o(),
-											t('div', E, [
+											t('div', D, [
 												n(
 													'img',
 													{
@@ -450,10 +484,10 @@ y.render = function (e, r, a, g, m, u) {
 													8,
 													['src', 'alt']
 												),
-												n('div', M, [
-													n('h1', D, s(e.name), 1),
-													n('p', I, s(e.text), 1),
-													n('div', j, [
+												n('div', I, [
+													n('h1', j, s(e.name), 1),
+													n('p', L, s(e.text), 1),
+													n('div', B, [
 														e.link
 															? (o(),
 															  t(
@@ -478,16 +512,16 @@ y.render = function (e, r, a, g, m, u) {
 								)),
 						  ]))
 						: d('', !0),
-					'projects' == e.currentSection ? (o(), t('div', L, [B])) : d('', !0),
-					'hobbies' == e.currentSection ? (o(), t('div', F, [S])) : d('', !0),
+					'projects' == e.currentSection ? (o(), t('div', F, [S])) : d('', !0),
+					'hobbies' == e.currentSection ? (o(), t('div', J, [q])) : d('', !0),
 					'media' == e.currentSection
 						? (o(),
-						  t('div', J, [
+						  t('div', R, [
 								(o(!0),
 								t(
-									i,
+									l,
 									null,
-									l(
+									i(
 										e.media,
 										(e) => (
 											o(),
