@@ -73,7 +73,7 @@ m.render = function (e, l, i, c, d, g) {
 										e.hover ? 'opacity-100' : 'opacity-0',
 									],
 								},
-								s('>'),
+								s('→'),
 								2
 							),
 							n(
@@ -349,10 +349,10 @@ var y = e({
 const b = {
 		class: 'bg-gray-100 dark:bg-gray-900 min-h-screen transition duration-100',
 	},
-	k = n(
+	f = n(
 		'svg',
 		{
-			class: 'img-white fill-current',
+			class: 'img-white fill-current transform scale-50 md:scale-100',
 			viewBox: '0 0 256 256',
 			width: '23',
 			height: '23',
@@ -370,7 +370,7 @@ const b = {
 		],
 		-1
 	),
-	f = n('p', { class: 'ml-2 text-xl' }, 'Back', -1),
+	k = n('p', { class: 'ml-1 md:ml-2 md:text-xl' }, 'Back', -1),
 	v = { class: 'flex justify-center' },
 	C = n(
 		'h1',
@@ -429,7 +429,7 @@ y.render = function (e, r, a, g, m, u) {
 							onMouseenter: r[1] || (r[1] = (t) => (e.backToggle = !0)),
 							onMouseleave: r[2] || (r[2] = (t) => (e.backToggle = !1)),
 						},
-						[k, f],
+						[f, k],
 						32
 					),
 					n('div', v, [
